@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('text');
             $table->string('slug');
             $table->string('photo_location');
+            $table->string('min_photo_location');   
             $table->timestamps();
         });
     }

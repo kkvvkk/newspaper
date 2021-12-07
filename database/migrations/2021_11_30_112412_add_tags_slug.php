@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateViewsTable extends Migration
+class AddTagsSlug extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateViewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('views', function (Blueprint $table) {
-            $table->id();
-            $table->integer('article_id');
-            $table->integer('number')->default(0);
-            $table->timestamps();
+        Schema::table('tags', function(Blueprint $table) {
+            $table->string('slug');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateViewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('views');
+        Schema::table('products_parameters', function(Blueprint $table) {
+            $table->dropColumn('slug');
+        });
     }
 }

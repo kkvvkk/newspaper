@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,6 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', [MainController::class, 'main'])->name('main');
+Route::get('/articles', [ArticlesController::class, 'showArticles'])->name('articles');
+Route::get('/article/{slug}', [ArticlesController::class, 'showArticleBySlug'])->name('article');
+

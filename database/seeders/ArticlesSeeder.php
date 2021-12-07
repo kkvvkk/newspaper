@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
+use App\Models\Like;
 use App\Models\Tag;
+use App\Models\Views;
 use Illuminate\Database\Seeder;
 
 class ArticlesSeeder extends Seeder
@@ -31,6 +33,7 @@ class ArticlesSeeder extends Seeder
             }
             $tags = Tag::WhereIn('id', $ids)->get();
             Article::factory()
+                ->has(Views::factory()->count(1))
                 ->hasAttached($tags)
                 ->create();
         }

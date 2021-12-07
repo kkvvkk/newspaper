@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Tag;
-use Illuminate\Support\Str;
+use App\Models\Views;
 
-class TagFactory extends Factory
+class ViewsFactory extends Factory
 {
-    protected $model = Tag::class;
+    protected $model = Views::class;
     /**
      * Define the model's default state.
      *
@@ -16,10 +15,7 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-        $name =  $this->faker->name();
         return [
-            'name' => $name,
-            'slug' => Str::slug($name, '-'),
         ];
     }
 }

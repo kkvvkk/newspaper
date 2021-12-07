@@ -19,7 +19,7 @@ class ArticleFactory extends Factory
         $title = $this->faker->text($maxNbChars = 60) ;
         return [
             'title' => $title,
-            'text' => $this->faker->text(),
+            'text' => $this->faker->text(10000),
             'slug' => Str::slug($title, '-'),
             'photo_location' => '600',
             'min_photo_location' => '150',

@@ -13,4 +13,17 @@ class Article extends Model
     {
         return $this->belongsToMany(Tag::class, 'articles_tags', 'article_id', 'tag_id');
     }
+
+    public function views()
+    {
+        return $this->hasOne(Views::class);
+    }
+
+    public function scopeByTag($query, $tagSlug)
+    {
+        return $query->whereHas('tags', function($q) use($tagSlug) {
+            $q->where('slug', $tagSlug );
+        });
+    }
+
 }

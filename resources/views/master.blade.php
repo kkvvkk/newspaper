@@ -2,6 +2,7 @@
 <head>
   <title>@yield('title')</title>
 	<link rel="stylesheet" type="text/css" href=" {{ URL::asset('css/bootstrap.css') }} ">
+  <script src="{{asset('js/jquery.min.js')}}"></script>
 </head>
 <body>
 <div class="container">
@@ -10,7 +11,7 @@
         <span class="fs-4">Тредиум</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{{route('main')}}" class="nav-link active" aria-current="page" name="main">На главную</a></li>
+        <li class="nav-item"><a href="{{route('main')}}" class="nav-link" aria-current="page" name="main">На главную</a></li>
         <li class="nav-item"><a href="{{route('articles')}}" class="nav-link" name="articles">Каталог статей</a></li>
       </ul>
     </header>

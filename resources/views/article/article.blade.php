@@ -19,4 +19,8 @@
         <p>{{$article->text}}</p>
     </article>
 
+    @include('article.addComment', compact('article'))
+    @include('article.comments', compact('article'))
+    
+
 @endsection

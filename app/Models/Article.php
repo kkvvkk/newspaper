@@ -19,6 +19,11 @@ class Article extends Model
         return $this->hasOne(Views::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+    }
+
     public function scopeByTag($query, $tagSlug)
     {
         return $query->whereHas('tags', function($q) use($tagSlug) {

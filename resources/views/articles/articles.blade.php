@@ -18,4 +18,5 @@
     </div>
     {{ $articles->onEachSide(9)->links() }}
 @endsection
-<script src="js/newspaper.js"></script>
+
+

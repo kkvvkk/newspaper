@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Redis;
 
 class ArticlesViewsService 
 {
+    /**
+     * Get articles views 
+     * @param  App\Models\Article $article
+     * @param int $DBFieldUpdateFrequency
+     * @return int
+     */
     public function getArticlesViews (Article $article, int $DBFieldUpdateFrequency) 
     {
         $views = Redis::get('article:' . $article->id . ':views');

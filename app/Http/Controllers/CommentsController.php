@@ -7,6 +7,11 @@ use App\Models\Comment;
 
 class CommentsController extends Controller
 {
+    /**
+     * Add articles comment from database
+     * @param  Request $request
+     * @return Illuminate\Contracts\Routing\ResponseFactory::json
+     */
     public function addComment(Request $request)
     {
         $comment = Comment::create([

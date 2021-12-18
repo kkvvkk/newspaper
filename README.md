@@ -1,11 +1,11 @@
 # Newspaper
 Простой сайт-статейник
 ## Инструменты
-Laravel 8
-Jquery 3.6.0
-Twitter Bootstrap 4
-Redis with Predis 1.1
-PHPUnit
+- Laravel 8
+- Jquery 3.6.0
+- Twitter Bootstrap 4
+- Redis with Predis 1.1
+- PHPUnit
 ## Возможности
 
 Реализовано на данный момент:
